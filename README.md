@@ -9,16 +9,38 @@ Hiding internal details and showing functionality is known as abstraction.
 ```
 In Java, we use abstract class and interface to achieve abstraction.
 ```
-### Why use abstract classes
-- stop create object from the classes
-- have some abtract methodes we can implement later. (if inheritance was used here we have to implement in the super class )
-- share code among several closely related classes.
 
-### Why use interfaces over abstract classes
-- multiple iheritance
-- abstract classes may contain non-final variables, whereas variables in interface are final, public and static. 
-- unrelated classes would implement the interface.
-- specify the behavior not concerned about who implements its behavior.
+
+<details>
+  <summary markdown="span">Why use abstract classes</summary>
+
+ 
+  <ul>
+    <li>Have some abtract methodes you can implement later. <br> (if inheritance was used here you have to implement in the super class)</li>
+    <li>You want to share your code with several relevant  classes</li>
+    <li>You expect that classes that extend your abstract class have some communal methods or fields</li>
+    <li>stop creating object from the classes</li>
+  </ul>
+</details>
+
+
+<details>
+  <summary markdown="span">Why use interfaces over abstract classes</summary>
+
+ 
+   <ul>
+    <li>You feel that some non-relevant classes would implement your interfaces.</li>
+    <li>Specify the behavior not concerned about who implements its behavior</li>
+    <li>You want to define the behavior of a particular data type. But who implements its behavior is not your concern</li>
+    <li>abstract classes may contain non-final variables, whereas variables in interface are final, public and static.</li>
+    <li>multiple iheritance</li>
+   </ul>
+</details>
+
+
+
+<span style="color:blue">Note: </span>
+We can add methods to an abstract class without breaking any clients. If we add a method to an interface, we break all implementations
 
 
 ## 2.Encapsulation
@@ -43,12 +65,18 @@ Make the instance variables private so that they cannot be accessed directly fro
 ```
 In Java, we use access modifiers like private protected to achieve encapsulation.
 ```
-### example
-```
-Animal that has a method animalSound(), here we cannot give implementation to this method as we do not know which Animal class would extend Animal class. So, we make this method abstract like this:
+
+
+<details>
+    <summary markdown="span">examples</summary>
 
 ```
-```JAVA
+Animal that has a method animalSound(), here we cannot give implementation to  this method as we do not know
+which Animal class would extend Animal class. So, we make this method abstractlike this:
+```
+
+
+ ```JAVA
 public abstract class Animal{
    ...
    public abstract void animalSound();
@@ -77,17 +105,28 @@ public class Dog extends Animal{
 ```
 As you can see that although we had the common action for all subclasses animalSound() but there were different ways to do the same action. 
 ```
+</details>
+
+
+
+
+
 ### Types of Polymorphism
 ```
 1) Static Polymorphism
 2) Dynamic Polymorphism
 ```
-### 1.Static Polymorphism
+<h4>1.Static Polymorphism</h4>
+
 ```
 Polymorphism that is resolved during compiler time is known as static polymorphism. Method overloading can be considered as static polymorphism
 ```
 <span style="color:blue">Note: </span>
 When we say method signature we are not talking about return type of the method, for example if two methods have same name, same parameters and have different return type, then this is not a valid method overloading example. This will throw compilation error.
+
+
+<details>
+  <summary markdown="span">Static Polymorphism examples</summary>
 
 ```JAVA
 public static void method1(int a, int b){
@@ -106,13 +145,21 @@ public static int method1(int a){
 
 ```
 
+</details>
+
+
+
 <span style="color:red">Error: </span>
 last one is not valid and throw duplicate method error because return type is not considered as part of the signature
 
-### 1.Dynamic Polymorphism (Dynamic Method Dispatch)
+<h4>2.Dynamic Polymorphism (Dynamic Method Dispatch)</h4>
+
 ```
 It is also known as  Dynamic Method Dispatch. Dynamic polymorphism is a process in which a call to an overridden method is resolved at runtime rather, thats why it is called runtime polymorphism.
 ```
+<details>
+  <summary markdown="span"> Dynamic Polymorphism examples</summary>
+
 ```JAVA
 class Animal{
    public void animalSound(){
@@ -130,6 +177,8 @@ public class Dog extends Animal{
     }
 }
 ```
+</details>
+
 <span style="color:blue">Note</span>
 Since both the classes, child class and parent class have the same method animalSound. Which of the method will be called is determined at runtime by JVM.
 
@@ -142,8 +191,10 @@ When one object acquires all the properties and behaviors of a parent object, it
 ```
 Inheritance allows us to reuse of code, it improves reusability in our java application.
 ```
-### example
-```JAVA
+<details>
+  <summary markdown="span">examples</summary>
+
+  ```JAVA
 class Vehicle {
   protected String brand = "Ford";
   public void honk() {
@@ -160,5 +211,9 @@ class Car extends Vehicle {
   }
 }
 ```
+</details>
+
+
+
 <span style="color:blue">Note</span>
 This is used to achieve runtime polymorphism.
