@@ -217,3 +217,40 @@ class Car extends Vehicle {
 
 <span style="color:blue">Note</span>
 This is used to achieve runtime polymorphism.
+
+# UML Class Diagrams
+
+```
+This is the UML class diagram for Nanosoft Project Management System
+```
+![NanosoftUMLclassDM](/oop-codes/NanosoftUMLclassDM.jpeg)
+
+<ol>
+`<li>Person is the supper class of Employee and Customer</li>
+    <ul>
+    <li>
+    shows with open arrays to the side of the supper class</li>
+    <li>No need to show multiplicity</li>
+    </ul>
+<li>Person has a Composition relation with Name and Date </li>
+<ul>
+    <li>Name and Date can't exists without a Person</li>
+    <li>1:1 relationship between Person and Name, Person and Date 
+</ul>
+<li>Projects has association with Employee and Customer</li>
+<ul>
+<li>Project can't exists without Customer, Composition</li>
+<li>One customer can have many projects</li>
+<li>Project can exists without Employee, Aggregation</li>
+<li>n:m relationship, one employee can works on many project, one project have many employees</li>
+<li>1:m relationship, one customer can have many project, one project can have one customer</li>
+</ul>
+
+</ol>
+
+```
+here is another example
+```
+![NanosoftUMLclassDM](/oop-codes/Zoo.png)
+<span style="color:blue">Error: </span>
+Relationship between Otter and Sea urchin is association
