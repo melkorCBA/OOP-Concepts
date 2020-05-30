@@ -1,20 +1,34 @@
-# OOP Concepts
+<h1 style="font-size:3rem;"> OOP in Java</h1>
+
+<h1>OOP Concepts</h1>
+<p>There are 4 main concepts in java
+  <ol>
+    <li><a href="#abstraction">Abstraction</li>
+    <li><a href="#encapsulation">Encapsulation</li>
+    <li><a href="#polymorphism">Polymorphism</li>
+    <li><a href="#inheritance">Inheritance</a> </li>
+  </ol>
+  And for drawing <a href="#classDGM">UML class diagrams</a><br>
+  And about <a href="#javaMem">Java Memory Allocation </a>
+</p>
+
+<div id="abstraction">
 
 ## 1.Abstraction
 
-### definition 
+### definition
+
 ```
 Hiding internal details and showing functionality is known as abstraction.
 ```
+
 ```
 In Java, we use abstract class and interface to achieve abstraction.
 ```
 
-
 <details>
   <summary markdown="span">Why use abstract classes</summary>
 
- 
   <ul>
     <li>Have some abtract methodes you can implement later. <br> (if inheritance was used here you have to implement in the super class)</li>
     <li>You want to share your code with several relevant  classes</li>
@@ -23,11 +37,9 @@ In Java, we use abstract class and interface to achieve abstraction.
   </ul>
 </details>
 
-
 <details>
   <summary markdown="span">Why use interfaces over abstract classes</summary>
 
- 
    <ul>
     <li>You feel that some non-relevant classes would implement your interfaces.</li>
     <li>Specify the behavior not concerned about who implements its behavior</li>
@@ -37,35 +49,45 @@ In Java, we use abstract class and interface to achieve abstraction.
    </ul>
 </details>
 
-
-
 <span style="color:blue">Note: </span>
 We can add methods to an abstract class without breaking any clients. If we add a method to an interface, we break all implementations
 
+</div>
+
+<div id="encapsulation"></div>
 
 ## 2.Encapsulation
 
-### definition 
+### definition
+
 ```
 Encapsulation simply means binding object state(fields) and behavior(methods) together.
 ```
+
 ```
 In Java, we use access modifiers like private protected to achieve encapsulation.
 ```
+
 ### example
-```
+
+<p style="background-color: #f0f5f1; padding:10px;">
 Make the instance variables private so that they cannot be accessed directly from outside the class.
-```
+</p>
+
+</div>
+<div id="polymorphism">
+
 ## 3.Polymorphism
 
-### definition 
+### definition
+
 ```
  perform a single action in different ways.
 ```
+
 ```
 In Java, we use access modifiers like private protected to achieve encapsulation.
 ```
-
 
 <details>
     <summary markdown="span">examples</summary>
@@ -75,16 +97,17 @@ Animal that has a method animalSound(), here we cannot give implementation to  t
 which Animal class would extend Animal class. So, we make this method abstractlike this:
 ```
 
-
- ```JAVA
+```JAVA
 public abstract class Animal{
-   ...
-   public abstract void animalSound();
+  ...
+  public abstract void animalSound();
 }
 ```
+
 ```
 Now suppose we have two Animal classes Dog and Lion that extends Animal class. We can provide the implementation detail there.
 ```
+
 ```JAVA
 public class Lion extends Animal{
 ...
@@ -102,28 +125,27 @@ public class Dog extends Animal{
     }
 }
 ```
+
 ```
-As you can see that although we had the common action for all subclasses animalSound() but there were different ways to do the same action. 
+As you can see that although we had the common action for all subclasses animalSound() but there were different ways to do the same action.
 ```
+
 </details>
 
-
-
-
-
 ### Types of Polymorphism
+
 ```
 1) Static Polymorphism
 2) Dynamic Polymorphism
 ```
+
 <h4>1.Static Polymorphism</h4>
 
-```
+<p style="background-color: #f0f5f1; padding:10px;">
 Polymorphism that is resolved during compiler time is known as static polymorphism. Method overloading can be considered as static polymorphism
-```
+</p>
 <span style="color:blue">Note: </span>
 When we say method signature we are not talking about return type of the method, for example if two methods have same name, same parameters and have different return type, then this is not a valid method overloading example. This will throw compilation error.
-
 
 <details>
   <summary markdown="span">Static Polymorphism examples</summary>
@@ -147,16 +169,14 @@ public static int method1(int a){
 
 </details>
 
-
-
 <span style="color:red">Error: </span>
 last one is not valid and throw duplicate method error because return type is not considered as part of the signature
 
 <h4>2.Dynamic Polymorphism (Dynamic Method Dispatch)</h4>
 
-```
+<p style="background-color: #f0f5f1; padding:10px;">
 It is also known as  Dynamic Method Dispatch. Dynamic polymorphism is a process in which a call to an overridden method is resolved at runtime rather, thats why it is called runtime polymorphism.
-```
+</p>
 <details>
   <summary markdown="span"> Dynamic Polymorphism examples</summary>
 
@@ -177,52 +197,64 @@ public class Dog extends Animal{
     }
 }
 ```
+
 </details>
 
 <span style="color:blue">Note</span>
 Since both the classes, child class and parent class have the same method animalSound. Which of the method will be called is determined at runtime by JVM.
 
+</div>
+
+<div id="inheritance">
+
 ## 4.Inheritance
 
-### definition 
-```
+### definition
+
+<p style="background-color: #f0f5f1; padding:10px;">
 When one object acquires all the properties and behaviors of a parent object, it is known as inheritance.
-```
+</p>
+
 ```
 Inheritance allows us to reuse of code, it improves reusability in our java application.
 ```
+
 <details>
   <summary markdown="span">examples</summary>
 
-  ```JAVA
+```JAVA
 class Vehicle {
-  protected String brand = "Ford";
-  public void honk() {
-    System.out.println("Tuut, tuut!");
-  }
+protected String brand = "Ford";
+public void honk() {
+  System.out.println("Tuut, tuut!");
+}
 }
 
 class Car extends Vehicle {
-  private String modelName = "Mustang";
-  public static void main(String[] args) {
-    Car myFastCar = new Car();
-    myFastCar.honk();
-    System.out.println(myFastCar.brand + " " + myFastCar.modelName);
-  }
+private String modelName = "Mustang";
+public static void main(String[] args) {
+  Car myFastCar = new Car();
+  myFastCar.honk();
+  System.out.println(myFastCar.brand + " " + myFastCar.modelName);
+}
 }
 ```
+
 </details>
-
-
 
 <span style="color:blue">Note</span>
 This is used to achieve runtime polymorphism.
+
+</div>
+
+<div id="classDGM">
 
 # UML Class Diagrams
 
 ```
 This is the UML class diagram for Nanosoft Project Management System
 ```
+
 ![NanosoftUMLclassDM](/oop-codes/NanosoftUMLclassDM.jpeg)
 
 <ol>
@@ -251,6 +283,7 @@ This is the UML class diagram for Nanosoft Project Management System
 ```
 here is another example
 ```
+
 ![NanosoftUMLclassDM](/oop-codes/Zoo.png)
 <span style="color:blue">Error: </span>
 Relationship between Otter and Sea urchin is association
@@ -260,3 +293,44 @@ Watch this for more details
 ```
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UI6lqHOVHic" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div id="javaMem">
+<h1>Java Memory Allocation </h1>
+
+<p>The JVM divided the memory into following sections.
+  <ol>
+    <li> <b>code</b> section contains the bytecode.</li>
+    <li><b>Stack</b> section of memory contains methods, local variables, and reference variables.</li>
+    <li><b>Heap</b> section contains Objects (may also contain reference variables).</li>
+    <li><b>Static</b> section contains Static data/methods.</li>
+  </ol>
+ </p>
+
+ <h2>Java static keyword</h2>
+ <p>
+
+
+The static can be:
+<ol>
+  <li>Static variables</li>
+  <li>Static methods</li>
+  <li>Static Blocks Of Code. </li>
+</ol>
+
+ </p>
+
+ <h3>1.Static variables</h3>
+ <p>
+ <ul>
+  <li>belongs to the class and not to object(instance )</li>
+  <li>initialized only once at the start of the execution</li>
+  <li>static variables will be initialized first, before the initialization of any instance variables. </li>
+  <li>A single copy to be shared by all instances of the class</li>
+  <li>A static variable can be accessed directly by the class name and doesn’t need any object</li>
+ 
+ </ul>
+ </p>
+  <h3>2.Static methods</h3>
+
+</dv>
