@@ -7,9 +7,11 @@
     <li><a href="#encapsulation">Encapsulation</li>
     <li><a href="#polymorphism">Polymorphism</li>
     <li><a href="#inheritance">Inheritance</a> </li>
+    
   </ol>
   And for drawing <a href="#classDGM">UML class diagrams</a><br>
-  And about <a href="#javaMem">Java Memory Allocation </a>
+  And about <a href="#javaMem">Java Memory Allocation </a> <br>
+  For <a href="#resources">Resources</a>
 </p>
 
 <div id="abstraction">
@@ -310,8 +312,8 @@ Watch this for more details
  <h2>Java static keyword</h2>
  <p>
 
-
 The static can be:
+
 <ol>
   <li>Static variables</li>
   <li>Static methods</li>
@@ -323,14 +325,159 @@ The static can be:
  <h3>1.Static variables</h3>
  <p>
  <ul>
-  <li>belongs to the class and not to object(instance )</li>
-  <li>initialized only once at the start of the execution</li>
-  <li>static variables will be initialized first, before the initialization of any instance variables. </li>
+  <li>Belongs to the class and not to object(instance )</li>
+  <li>Initialized only once at the start of the execution</li>
+  <li>Static variables will be initialized first, before the initialization of any instance variables. </li>
   <li>A single copy to be shared by all instances of the class</li>
   <li>A static variable can be accessed directly by the class name and doesn’t need any object</li>
  
  </ul>
  </p>
   <h3>2.Static methods</h3>
+  <p>
+  <ul>
+  <li>Methods which belongs to the class and not to the object</li>
+  <li>Can only access static data. It cannot access non-static data (instance variables). </li>
+  <li>Can only call other static methods</li>
+ 
+  <li>Can be accessed directly by the class name and doesn’t need any object</li>
+  <li>static method cannot refer to "this" or "super" keywords in anyway</li>
+
+   </ul>
+
+   <details>
+  <summary markdown="span"> examples</summary>
+
+```JAVA
+public class Demo{
+  public static void main(String args[]){
+    Student s1 = new Student();
+    s1.showData();
+    Student s2 = new Student();
+    s2.showData();
+    //------section 1.......
+    //Student.b++;
+    //s1.showData();
+    //......................
+  }
+}
+
+class Student {
+  int a; //initialized to zero
+  static int b; //initialized to zero only when class is loaded not for each object created.
+
+  Student(){
+    //Constructor incrementing static variable b
+    b++;
+  }
+
+  public void showData(){
+    System.out.println("Value of a = "+a);
+    System.out.println("Value of b = "+b);
+  }
+  //------------section 2-----------
+  //public static void increment(){
+  //a++;
+  //}
+  //--------------------------------
+
+}
+
+```
+
+  </p>
+  <span>Expected output </span>
+  
+![staticMethod1](/oop-codes/staticmethode1.png)
+
+  <p>This is how memory allocation happens in JVM</p>
+
+![staticMem](/oop-codes/staticMem.png)
+
+  <p><b>uncomment section 1: </b>check if is it possible to access a static variable from outside the class</p>
+   <p><b>output: </b></p>
+
+![staticMem](/oop-codes/staticsection1output.png)
+
+  <p><b>uncomment section 2: </b>it is not possible to access instance variable "a" from java static class method "increment".</p>
+   <p><b>output: </b></p>
+
+![staticSection2out](/oop-codes/staticoutputerror.png)
+
+ </details>
+
+  <h3>3.Static Blocks</h3>
+  <p>
+  <ul>
+  <li>A block of statement inside a Java class that will be executed when a class is first loaded into the JVM. </li>
+  <li>Static block helps to initialize the static data members, just like constructors help to initialize instance members. </li>
+   </ul>
+
+   <details>
+  <summary markdown="span"> examples</summary>
+
+```JAVA
+public class Demo {
+  static int a;
+  static int b;
+  static {
+    a = 10;
+    b = 20;
+  }
+  public static void main(String args[]) {
+
+  System.out.println("Value of a = " + a);
+  System.out.println("Value of b = " + b);
+
+  }
+}
+
+
+```
+
+  </p>
+  <span>Will get following output</span>
+
+![staticBlock](/oop-codes/staticblockoutput.png)
+
+ </details>
 
 </dv>
+
+<div id="resources">
+<h1>Resources </h1>
+  <ol>
+    <li><a href="https://coderanch.com/wiki/660119/Interface-Abstract-Class">“Interface Vs Abstract Class (Wiki Forum at Coderanch).” Coderanch.
+‌</a></li>
+
+  <li><a href="https://www.w3schools.com/java/java_abstract.asp">“Java Abstraction.” W3schools.Com, 2020.
+‌</a>
+</li>
+<li>
+  <a href="https://www.geeksforgeeks.org/abstract-classes-in-java/">“Abstract Classes in Java.” GeeksforGeeks, 3 Dec. 2012.
+  ‌</a>
+</li>
+<li>
+  <a href="https://stackify.com/oops-concepts-in-java/">“What Are OOP Concepts in Java? 4 Primary Concepts.” Stackify, 30 Apr. 2019.
+  ‌</a>
+</li>
+<li>
+  <a href="https://www.geeksforgeeks.org/interfaces-in-java/">Interfaces in Java - GeeksforGeeks.” GeeksforGeeks, 18 May 2016.
+  ‌</a>
+</li>
+<li>
+  <a href="https://beginnersbook.com/2013/04/oops-concepts/">OOPs Concepts in Java.” Beginnersbook.Com, 10 Sept. 2017
+  ‌</a>
+</li>
+<li>
+  <a href="https://dzone.com/articles/when-to-use-abstract-class-and-intreface">When to Use Abstract Class and Interface - DZone Java.”
+  ‌</a>
+</li>
+<li>
+  <a href="https://www.guru99.com/java-static-variable-methods.html">Java Static Method, Variable and Block with Example.
+  ‌</a>
+</li>
+
+  </ol>
+
+</div>
