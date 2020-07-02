@@ -27,6 +27,7 @@ Hiding internal (implementation) details and showing functionality is known as a
 ```
 In Java, we use abstract class and interface to achieve abstraction.
 ```
+<a href="https://rebrand.ly/u8o2gcj">here's</a> a good explanation on what is abstraction in programming
 
 <details>
   <summary markdown="span">Why use abstract classes</summary>
