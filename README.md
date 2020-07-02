@@ -88,7 +88,7 @@ Make the instance variables private so that they cannot be accessed directly fro
 ```
 
 ```
-In Java, we use access modifiers like private protected to achieve encapsulation.
+In Java, we use methode overloading and overiding to achieve polymorphism.
 ```
 
 <details>
