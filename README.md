@@ -213,9 +213,9 @@ Since both the classes, child class and parent class have the same method animal
 
 ### definition
 
-<p style="background-color: #f0f5f1; padding:10px;">
+```
 When one object acquires all the properties and behaviors of a parent object, it is known as inheritance.
-</p>
+```
 
 ```
 Inheritance allows us to reuse of code, it improves reusability in our java application.
