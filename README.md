@@ -21,7 +21,7 @@
 ### definition
 
 ```
-Hiding internal details and showing functionality is known as abstraction.
+Hiding internal (implementation) details and showing functionality is known as abstraction.
 ```
 
 ```
