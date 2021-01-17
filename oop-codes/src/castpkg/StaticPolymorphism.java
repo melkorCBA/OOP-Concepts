@@ -1,12 +1,27 @@
+package src.castpkg;
+import java.util.ArrayList;
 
 class StaticPolymorphism{
     public static void main(String[] args) {
-        
+    //   SuperClass A=new SuperClass();
+    //   SubClass B=(SubClass) A;
+    //   B.method1();
+    //   B.method2();
+    //   B.method3();
+
+    ArrayList<String> cars = new ArrayList<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("Mazda");
+    System.out.println(cars);
+    cars.remove("BMW");
+    System.out.println(cars);
     }
      
 
     public static void method1(int a, int b){
-        System.out.println(a+b);
+        // System.out.println(a+b);
     }
 
     //this is overloading
@@ -39,4 +54,11 @@ class StaticPolymorphism{
     public static int method1(char a, int b, int c){
         return b+c;
     }
+
+
+
+    
+    
+ 
+
 }

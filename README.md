@@ -11,6 +11,7 @@
   </ol>
   And for drawing <a href="#classDGM">UML class diagrams</a><br>
   And about <a href="#javaMem">Java Memory Allocation </a> <br>
+  And about <a href=#javaFinal>Java final keyword</a><br>
   For <a href="#resources">Resources</a>
 </p>
 
@@ -444,6 +445,41 @@ public class Demo {
 
 </dv>
 
+<div id="javaFinal">
+  <h1>Java Final Keyword </h1>
+   <h2>Java static keyword</h2>
+ <p>
+
+The final can be:
+
+<ol>
+  <li>final variable</li>
+  <li>final method</li>
+  <li>final class </li>
+</ol>
+
+ </p>
+
+ <h3>1.final variables</h3>
+ <p>If you make any variable as final, you cannot change the value of final variable(It will be constant)</p>
+
+ <h3>2.final methods</h3>
+ <p>If you make any method as final, you cannot override it.</p>
+
+ <h3>3.final classes</h3>
+ <p>If you make any class as final, you cannot extend it.</p>
+
+<span style="color:blue">Note: </span>
+A final variable that is not initialized at the time Can be initialize only in constructor. 
+
+<h3>Static blank final variable</h3>
+ <p>A static final variable that is not initialized at the time of declaration is known as static blank final variable. It can be initialized only in static block.</p>
+
+<h3>What is final parameter ? </h3>
+<p>if you declare any parameter as final, you cannot change/mutate  the value inside the method.</p>
+
+</div>
+
 <div id="resources">
 <h1>Resources </h1>
   <ol>
@@ -475,6 +511,11 @@ public class Demo {
 </li>
 <li>
   <a href="https://www.guru99.com/java-static-variable-methods.html">Java Static Method, Variable and Block with Example.
+  ‌</a>
+</li>
+
+<li>
+  <a href="https://www.javatpoint.com/final-keyword">Final Keyword In Java
   ‌</a>
 </li>
 
