@@ -444,7 +444,6 @@ public class Demo {
 
 <div id="javaFinal">
   <h1>Java Final Keyword </h1>
-   <h2>Java static keyword</h2>
  <p>
 
 The final can be:
