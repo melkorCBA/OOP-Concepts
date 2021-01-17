@@ -22,12 +22,13 @@
 ### definition
 
 ```
-Hiding internal details and showing functionality is known as abstraction.
+Hiding internal (implementation) details and showing functionality is known as abstraction.
 ```
 
 ```
 In Java, we use abstract class and interface to achieve abstraction.
 ```
+<a href="https://rebrand.ly/u8o2gcj">here's</a> a good explanation on what is abstraction in programming
 
 <details>
   <summary markdown="span">Why use abstract classes</summary>
@@ -89,7 +90,7 @@ Make the instance variables private so that they cannot be accessed directly fro
 ```
 
 ```
-In Java, we use access modifiers like private protected to achieve encapsulation.
+In Java, we use methode overloading and overiding to achieve polymorphism.
 ```
 
 <details>
@@ -214,9 +215,9 @@ Since both the classes, child class and parent class have the same method animal
 
 ### definition
 
-<p style="background-color: #f0f5f1; padding:10px;">
+```
 When one object acquires all the properties and behaviors of a parent object, it is known as inheritance.
-</p>
+```
 
 ```
 Inheritance allows us to reuse of code, it improves reusability in our java application.
@@ -288,14 +289,10 @@ here is another example
 ```
 
 ![NanosoftUMLclassDM](/oop-codes/Zoo.png)
-<span style="color:blue">Error: </span>
+<span style="color:blue">Note: </span>
 Relationship between Otter and Sea urchin is association
 
-```
-Watch this for more details
-```
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UI6lqHOVHic" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Watch <a href="https://www.youtube.com/embed/UI6lqHOVHic">this</a> for more details
 </div>
 
 <div id="javaMem">
